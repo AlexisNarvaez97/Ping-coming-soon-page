@@ -69,10 +69,13 @@ img {
       border: 1px solid $pale-blue;
       border-radius: 50px;
       padding: 20px 30px;
-    }
 
-    &-input::placeholder {
-      opacity: 0.4;
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        opacity: 0.4;
+      }
     }
 
     &-btn {
@@ -85,6 +88,11 @@ img {
       height: 40px;
       border-radius: 50px;
       box-shadow: 0 3px 5px -1px $blue;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
     }
   }
 }
@@ -110,6 +118,14 @@ img {
       width: 20px;
       height: 20px;
     }
+    svg:hover path {
+      fill: white;
+    }
+  }
+
+  li:hover {
+    background-color: $blue;
+    stroke: white;
   }
 
   li:last-child {
@@ -121,4 +137,44 @@ footer p {
   margin-top: 30px;
   text-align: center;
   font-size: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 50%;
+    margin: 0 auto;
+
+    .subscribe__info {
+      h1 {
+        font-size: 40px;
+        font-weight: 300;
+      }
+
+      strong {
+        color: $very-dark-blue;
+      }
+
+      p {
+        font-size: 20px;
+        font-weight: 400;
+      }
+    }
+
+    .subscribe__form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+
+      &-input {
+        width: 70%;
+        margin-right: 10px;
+      }
+
+      &-btn {
+        width: 30%;
+        margin: 0;
+      }
+    }
+  }
 }
